@@ -1,1 +1,10 @@
-{}
+{
+  "alerts": {
+    "signal": "HAUT_NON_CONF"
+  },
+  "date": "2026-09-21",
+  "reports_sent": [],
+  "recap_sent": true,
+  "snapshots": [],
+  "events": []
+}
