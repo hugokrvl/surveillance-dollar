@@ -1,0 +1,47 @@
+name: Surveillance Dollar / BTC
+
+on:
+  schedule:
+    # Toutes les 15 min de 06h à 20h45 UTC = couvre 08h–21h Paris en été (UTC+2) ET en hiver (UTC+1).
+    # Le script filtre lui-même la plage horaire de Paris et les créneaux (8h,10h…20h + récap 21h).
+    - cron: "*/15 6-20 * * *"
+  workflow_dispatch:   # lancement manuel depuis l'onglet Actions
+
+permissions:
+  contents: write      # pour commiter state.json
+
+concurrency:
+  group: dollar-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Check / point / récap
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python dollar_watch.py
+
+      - name: Commit de l'état
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          if git diff --cached --quiet; then
+            echo "État inchangé."
+          else
+            git commit -m "État surveillance dollar"
+            git pull --rebase --autostash
+            git push
+          fi
