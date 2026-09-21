@@ -6,7 +6,7 @@ Logique de la vidéo :
   • BTC < 76k + dollar acheté → chercher un SHORT (« pas avant »).
   • Entre les deux → NEUTRE, on attend le signal.
 """
-from config import (ASSETS, CONFIRM_MIN, OIL_ALERT, OIL_WARN, RATES_SPIKE_BP,
+from config import (ASSETS, CONFIRM_MIN, DOLLAR_SCALE, ACCEL_2H, ACCEL_2H_URGENT, OIL_ALERT, OIL_WARN, RATES_SPIKE_BP,
                     BTC_LONG_TRIGGER, BTC_TARGET_LOW, BTC_TARGET_HIGH,
                     BTC_SUPPORT, BTC_SHORT_TRIGGER, BTC_HYSTERESIS)
 
@@ -51,6 +51,55 @@ def dollar_regime(m: dict) -> dict:
     else:
         label = "💵➡️ dollar neutre / signaux mélangés"
     return {"dirs": dirs, "score": score, "weak": weak, "strong": strong, "label": label}
+
+
+SCALE_LABELS = {
+    3:  "🔥 RUÉE SUR LE DOLLAR",
+    2:  "Forts achats de dollars",
+    1:  "Achats modérés de dollars",
+    0:  "Dollar calme",
+    -1: "Ventes modérées de dollars",
+    -2: "Fortes ventes de dollars",
+    -3: "🔥 DÉBANDADE DU DOLLAR",
+}
+
+
+def _dollar_move(m: dict, field: str):
+    """Variation (%) du dollar : DXY, sinon EUR/USD inversé. Retourne (var, source)."""
+    for key, sign in (("DXY", 1), ("EURUSD", -1)):
+        a = m.get(key)
+        if a and a.get(field) is not None and not a.get("stale"):
+            return sign * a[field], key
+    return None, None
+
+
+def dollar_pressure(m: dict) -> dict:
+    """Échelle -3 (débandade) … +3 (ruée) d'après la variation du dollar sur la journée."""
+    chg, src = _dollar_move(m, "chg_pct")
+    level = 0
+    if chg is not None:
+        level = sum(abs(chg) >= s for s in DOLLAR_SCALE) * (1 if chg > 0 else -1)
+    # Jauge : 3 cases ventes | centre | 3 cases achats
+    cells = ["▱"] * 7
+    cells[3] = "◆"
+    if level > 0:
+        for i in range(4, 4 + level):
+            cells[i] = "▰"
+    elif level < 0:
+        for i in range(3 + level, 3):
+            cells[i] = "▰"
+    gauge = f"VENTES {''.join(cells)} ACHATS"
+    return {"level": level, "chg": chg, "source": src, "label": SCALE_LABELS[level], "gauge": gauge}
+
+
+def acceleration(m: dict) -> dict:
+    """Mouvement brutal du dollar sur 2 h (« boum, ça renforce d'un coup »)."""
+    chg, src = _dollar_move(m, "chg_2h_pct")
+    d = 0
+    if chg is not None and abs(chg) >= ACCEL_2H:
+        d = 1 if chg > 0 else -1
+    return {"dir": d, "chg": chg, "source": src,
+            "urgent": chg is not None and abs(chg) >= ACCEL_2H_URGENT}
 
 
 def drivers(m: dict) -> dict:

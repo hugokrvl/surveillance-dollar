@@ -23,9 +23,10 @@ import notifier
 from notifier import send
 from config import (ASSETS, DRIVERS, REPORT_HOURS, RECAP_HOUR, OIL_ALERT, OIL_WARN,
                     RATES_SPIKE_BP, NTFY_TOPIC, BTC_LONG_TRIGGER, BTC_SHORT_TRIGGER,
-                    BTC_TARGET_LOW, BTC_TARGET_HIGH, BTC_SUPPORT)
+                    BTC_TARGET_LOW, BTC_TARGET_HIGH, BTC_SUPPORT, ACCEL_COOLDOWN_H)
 from market import fetch_all
-from analysis import (SIGNALS, dollar_regime, drivers, btc_signal, plan_text, distance_text)
+from analysis import (SIGNALS, dollar_regime, drivers, btc_signal, plan_text, distance_text,
+                      dollar_pressure, acceleration)
 
 PARIS = pytz.timezone("Europe/Paris")
 STATE_FILE = Path(__file__).parent / "state.json"
@@ -92,6 +93,19 @@ def market_block(m: dict, reg: dict | None, weekend: bool) -> list[str]:
     return lines
 
 
+def pressure_lines(m: dict) -> list[str]:
+    pr = dollar_pressure(m)
+    if pr["chg"] is None:
+        return []
+    src = "DXY" if pr["source"] == "DXY" else "via EUR/USD"
+    lines = [f"📶 {pr['label']} ({pr['chg']:+.2f}% {src})", pr["gauge"]]
+    ac = acceleration(m)
+    if ac["dir"]:
+        sens = "achats" if ac["dir"] > 0 else "ventes"
+        lines.append(f"⚡ Accélération 2 h : {ac['chg']:+.2f}% ({sens} de dollars)")
+    return lines
+
+
 def analyse(m: dict, st: dict, weekend: bool):
     reg = dollar_regime(m)
     drv = drivers(m)
@@ -101,7 +115,25 @@ def analyse(m: dict, st: dict, weekend: bool):
 
 
 # ── 1) Check live : notif immédiate seulement si quelque chose CHANGE ─────────
+PRIO = {"default": 0, "high": 1, "urgent": 2}
+
+
 def live_check(m: dict, st: dict, weekend: bool, now: dt.datetime):
+    """Regroupe toutes les alertes d'un même check en UNE seule notif."""
+    pending = []
+    _live_check(m, st, weekend, now, lambda *a: pending.append(a))
+    if len(pending) == 1:
+        send(*pending[0])
+    elif pending:
+        pending.sort(key=lambda a: PRIO[a[2]], reverse=True)
+        title, _, prio, tags = pending[0]
+        gauge = [] if weekend else ["", *pressure_lines(m)]
+        body = ["🔔 " + a[0] for a in pending] + gauge + ["", pending[0][1]]
+        send(f"{title} (+{len(pending) - 1} alerte{'s' if len(pending) > 2 else ''})",
+             "\n".join(body), prio, tags)
+
+
+def _live_check(m: dict, st: dict, weekend: bool, now: dt.datetime, send):
     reg, drv, sig = analyse(m, st, weekend)
     al = st["alerts"]
     hhmm = now.strftime("%H:%M")
@@ -136,6 +168,47 @@ def live_check(m: dict, st: dict, weekend: bool, now: dt.datetime):
             event(f"{txt} (BTC {btc_txt})")
             al[f"reg_{key}"] = st["date"]
 
+    # Échelle : alerte quand on atteint un niveau FORT (±2) ou EXTRÊME (±3) plus haut que plus tôt dans la journée
+    pr = dollar_pressure(m)
+    pk = al.get("pressure") or {}
+    if pk.get("date") != st["date"]:
+        pk = {"date": st["date"], "max": 0, "min": 0}
+    lvl = pr["level"]
+    if (lvl >= 2 and lvl > pk["max"]) or (lvl <= -2 and lvl < pk["min"]):
+        buy = lvl > 0
+        body = [*pressure_lines(m), "", *market_block(m, reg, weekend), "",
+                ("Dollar acheté → pression baissière sur BTC/Or/EUR-USD. "
+                 f"Short seulement si BTC < {BTC_SHORT_TRIGGER/1000:g}k.") if buy else
+                ("Dollar vendu → soutien pour BTC/Or/EUR-USD. "
+                 f"Long si BTC > {BTC_LONG_TRIGGER/1000:g}k."), distance_text(m)]
+        send(f"📶 {pr['label']} — DXY {pr['chg']:+.2f}%", "\n".join(body),
+             "urgent" if abs(lvl) == 3 else "high",
+             ["rotating_light" if abs(lvl) == 3 else "warning", "dollar"])
+        event(f"{pr['label']} (DXY {pr['chg']:+.2f}%)")
+    pk["max"], pk["min"] = max(pk["max"], lvl), min(pk["min"], lvl)
+    al["pressure"] = pk
+
+    # Accélération brutale sur 2 h (cooldown par sens)
+    ac = acceleration(m)
+    last = al.get("accel") or {}
+    if ac["dir"]:
+        since = None
+        if last.get("t"):
+            since = (now - dt.datetime.fromisoformat(last["t"])).total_seconds() / 3600
+        if last.get("dir") != ac["dir"] or since is None or since >= ACCEL_COOLDOWN_H:
+            buy = ac["dir"] > 0
+            titre = "⚡ Le dollar ACCÉLÈRE À LA HAUSSE" if buy else "⚡ Le dollar DÉCROCHE"
+            body = [f"DXY {ac['chg']:+.2f}% en 2 h ({'achats' if buy else 'ventes'} brutaux de dollars)",
+                    *pressure_lines(m)[:2], "", *market_block(m, reg, weekend), "",
+                    (f"Si BTC/Or/EUR-USD piquent du nez et BTC casse {BTC_SUPPORT/1000:g}k → "
+                     f"short sous {BTC_SHORT_TRIGGER/1000:g}k.") if buy else
+                    (f"Si BTC/Or/EUR-USD rebondissent → long au-dessus de {BTC_LONG_TRIGGER/1000:g}k, "
+                     f"objectif {BTC_TARGET_LOW/1000:g}–{BTC_TARGET_HIGH/1000:g}k."), distance_text(m)]
+            send(f"{titre} ({ac['chg']:+.2f}% en 2 h)", "\n".join(body),
+                 "urgent" if ac["urgent"] else "high", ["zap", "dollar"])
+            event(f"{titre} ({ac['chg']:+.2f}% en 2 h)")
+            al["accel"] = {"dir": ac["dir"], "t": now.isoformat()}
+
     # Pétrole ≥ 100 $ (notif au franchissement, reset sous 95 $)
     if drv["oil_alert"] and not al.get("oil"):
         send(f"🛢️ Pétrole ≥ {OIL_ALERT:.0f} $ ({drv['oil_name']} {drv['oil_max']:.1f})",
@@ -163,6 +236,7 @@ def report(m: dict, st: dict, weekend: bool, now: dt.datetime):
     lines = []
     if not weekend:
         lines.append(f"{reg['label']} (score {reg['score']:+d}/4)")
+        lines += pressure_lines(m)
     else:
         lines.append("Week-end : BTC seul (marchés $ fermés)")
     lines += market_block(m, reg, weekend)
@@ -182,7 +256,8 @@ def report(m: dict, st: dict, weekend: bool, now: dt.datetime):
     title = f"{now.strftime('%Hh')} · BTC {btc_txt} · " + ("week-end" if weekend else regime_short)
     send(title, "\n".join(lines), "default", ["bar_chart"])
     st["snapshots"].append({"h": now.strftime("%H:%M"), "btc": btc["price"] if btc else None,
-                            "score": reg["score"], "regime": reg["label"], "signal": sig})
+                            "score": reg["score"], "regime": reg["label"], "signal": sig,
+                            "lvl": None if weekend else dollar_pressure(m)["level"]})
     st["alerts"]["signal"] = sig
 
 
@@ -205,12 +280,21 @@ def recap(m: dict, st: dict, weekend: bool, now: dt.datetime):
         lines.append(f"{a['label']}: {fmt_price(a)} ({chg}){rng}")
 
     if not weekend:
-        lines += ["", f"💵 Bilan dollar : {reg['label']} (score {reg['score']:+d}/4)"]
+        lines += ["", f"💵 Bilan dollar : {reg['label']} (score {reg['score']:+d}/4)", *pressure_lines(m)[:2]]
+        pk = st["alerts"].get("pressure") or {}
+        if pk.get("date") == st["date"] and (pk["max"] or pk["min"]):
+            from analysis import SCALE_LABELS
+            ext = []
+            if pk["max"] > 0:
+                ext.append(f"pic d'achats : {SCALE_LABELS[pk['max']]}")
+            if pk["min"] < 0:
+                ext.append(f"pic de ventes : {SCALE_LABELS[pk['min']]}")
+            lines.append("Extrêmes du jour : " + " · ".join(ext))
     if st["snapshots"]:
         lines += ["", "🕐 Au fil de la journée :"]
         for s in st["snapshots"]:
             btc = f"{s['btc']:,.0f}".replace(",", " ") if s["btc"] else "n/d"
-            reg_s = "" if weekend else f" · $ {s['score']:+d}"
+            reg_s = "" if weekend or s.get("lvl") is None else f" · $ {s['lvl']:+d}/3"
             lines.append(f"{s['h']} BTC {btc}{reg_s} · {SIGNALS[s['signal']].split(' ', 1)[1]}")
     lines += ["", "🔔 Alertes du jour :"]
     lines += [f"{e['h']} {e['text']}" for e in st["events"]] or ["Aucune — marché latéral."]

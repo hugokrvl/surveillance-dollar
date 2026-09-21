@@ -13,6 +13,14 @@ au Bitcoin. Même stack que `../surveillance` (Higgons) : GitHub Actions + yfina
 Confirmation = au moins `CONFIRM_MIN` (2) des 3 actifs DXY / EUR-USD / Or bougent (au-delà de
 leur `threshold` vs clôture de la veille) dans le même sens, aucun à contre-sens, BTC pas à contre-sens.
 
+## Échelle d'achat / vente de dollars
+Variation du DXY vs veille (repli : EUR/USD inversé), seuils `DOLLAR_SCALE` = 0,15 / 0,40 / 0,80 % :
+`-3 débandade · -2 fortes ventes · -1 ventes modérées · 0 calme · +1 achats modérés · +2 forts achats · +3 ruée`.
+Jauge affichée : `VENTES ▱▱▱◆▰▰▱ ACHATS`. Alerte live quand on atteint ±2 / ±3 pour la 1re fois du jour
+(`alerts.pressure` = extrêmes du jour).
+**Accélération** : DXY ≥ ±0,25 % sur 2 h → alerte (urgente ≥ 0,5 %), cooldown 2 h par sens (`alerts.accel`).
+Plusieurs alertes dans un même check → regroupées en UNE notif (`live_check` → `_live_check`).
+
 ## Notifications (heure de Paris)
 | Quand | Quoi |
 |---|---|

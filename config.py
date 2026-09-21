@@ -34,6 +34,16 @@ OIL_ALERT        = 100.0   # $/baril : le pétrole « flambe »
 OIL_WARN         = 95.0
 RATES_SPIKE_BP   = 8       # hausse du 10 ans vs veille (points de base) = « les taux se cabrent »
 
+# ── Échelle d'achat / vente de dollars ──────────────────────────────────────
+# Basée sur la variation du DXY vs clôture de la veille (repli sur EUR/USD inversé si DXY absent).
+# |var| ≥ seuil → niveau 1 (modéré), 2 (fort), 3 (ruée / débandade). Signe + = achats, − = ventes.
+DOLLAR_SCALE = [0.15, 0.40, 0.80]   # en %
+
+# Accélération brutale : variation du DXY sur les 2 dernières heures
+ACCEL_2H        = 0.25   # % → alerte « le dollar accélère »
+ACCEL_2H_URGENT = 0.50   # % → alerte urgente
+ACCEL_COOLDOWN_H = 2     # pas de nouvelle alerte dans le même sens avant 2 h
+
 # Confirmation dollar : parmi DXY / EUR/USD / Or (hors BTC, qu'on veut trader),
 # combien doivent aller dans le même sens (et aucun dans le sens contraire).
 CONFIRM_MIN = 2
