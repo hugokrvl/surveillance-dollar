@@ -3,13 +3,14 @@
     "signal": "HAUT_NON_CONF",
     "pressure": {
       "date": "2026-09-22",
-      "max": 0,
+      "max": 1,
       "min": 0
     }
   },
   "date": "2026-09-22",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -20,6 +21,14 @@
       "regime": "💵↗️ dollar plutôt fort (non confirmé)",
       "signal": "HAUT_NON_CONF",
       "lvl": 0
+    },
+    {
+      "h": "17:24",
+      "btc": 86314.7265625,
+      "score": 1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 1
     }
   ],
   "events": []
