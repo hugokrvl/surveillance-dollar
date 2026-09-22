@@ -1,10 +1,26 @@
 {
   "alerts": {
-    "signal": "HAUT_NON_CONF"
+    "signal": "HAUT_NON_CONF",
+    "pressure": {
+      "date": "2026-09-22",
+      "max": 0,
+      "min": 0
+    }
   },
-  "date": "2026-09-21",
-  "reports_sent": [],
-  "recap_sent": true,
-  "snapshots": [],
+  "date": "2026-09-22",
+  "reports_sent": [
+    12
+  ],
+  "recap_sent": false,
+  "snapshots": [
+    {
+      "h": "12:55",
+      "btc": 85920.5390625,
+      "score": 2,
+      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 0
+    }
+  ],
   "events": []
 }
