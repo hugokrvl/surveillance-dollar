@@ -12,7 +12,8 @@
   },
   "date": "2026-09-24",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -20,6 +21,14 @@
       "h": "13:04",
       "btc": 83579.1015625,
       "score": 4,
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 1
+    },
+    {
+      "h": "17:49",
+      "btc": 84317.4375,
+      "score": 3,
       "regime": "💵⬆️ DOLLAR ACHETÉ",
       "signal": "HAUT_NON_CONF",
       "lvl": 1
