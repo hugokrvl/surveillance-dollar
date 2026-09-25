@@ -1,51 +1,39 @@
 {
   "alerts": {
-    "signal": "HAUT_NON_CONF",
+    "signal": "LONG",
     "pressure": {
-      "date": "2026-09-24",
-      "max": 1,
-      "min": 0
+      "date": "2026-09-25",
+      "max": 0,
+      "min": -1
     },
     "reg_strong": "2026-09-24",
     "rates": "2026-09-24",
-    "oil": true
+    "oil": true,
+    "reg_weak": "2026-09-25"
   },
-  "date": "2026-09-24",
+  "date": "2026-09-25",
   "reports_sent": [
-    12,
-    16
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
       "h": "13:04",
-      "btc": 83579.1015625,
-      "score": 4,
-      "regime": "💵⬆️ DOLLAR ACHETÉ",
-      "signal": "HAUT_NON_CONF",
-      "lvl": 1
-    },
-    {
-      "h": "17:49",
-      "btc": 84317.4375,
-      "score": 3,
-      "regime": "💵⬆️ DOLLAR ACHETÉ",
-      "signal": "HAUT_NON_CONF",
-      "lvl": 1
+      "btc": 84793.84375,
+      "score": -3,
+      "regime": "💵⬇️ DOLLAR VENDU",
+      "signal": "LONG",
+      "lvl": -1
     }
   ],
   "events": [
     {
       "h": "13:04",
-      "text": "Dollar ACHETÉ confirmé (BTC 83 579 $)"
+      "text": "🟢 SIGNAL LONG (BTC 84 794 $, avant : 🟡 Au-dessus de 82k SANS confirmation dollar)"
     },
     {
       "h": "13:04",
-      "text": "Pétrole ≥ 100 $ (Pétrole Brent 104.5)"
-    },
-    {
-      "h": "13:04",
-      "text": "Taux 10 ans +15 pb"
+      "text": "Dollar VENDU confirmé (BTC 84 794 $)"
     }
   ]
 }
