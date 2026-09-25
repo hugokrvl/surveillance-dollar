@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "signal": "HAUT_NON_CONF",
+    "signal": "LONG",
     "pressure": {
       "date": "2026-09-25",
       "max": 0,
@@ -16,7 +16,7 @@
     12,
     16
   ],
-  "recap_sent": false,
+  "recap_sent": true,
   "snapshots": [
     {
       "h": "13:04",
