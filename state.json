@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "signal": "LONG",
+    "signal": "HAUT_NON_CONF",
     "pressure": {
       "date": "2026-09-25",
       "max": 0,
@@ -13,7 +13,8 @@
   },
   "date": "2026-09-25",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -23,6 +24,14 @@
       "score": -3,
       "regime": "💵⬇️ DOLLAR VENDU",
       "signal": "LONG",
+      "lvl": -1
+    },
+    {
+      "h": "17:49",
+      "btc": 83417.078125,
+      "score": -1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
       "lvl": -1
     }
   ],
@@ -34,6 +43,10 @@
     {
       "h": "13:04",
       "text": "Dollar VENDU confirmé (BTC 84 794 $)"
+    },
+    {
+      "h": "17:49",
+      "text": "🟡 Au-dessus de 82k SANS confirmation dollar (BTC 83 417 $, avant : 🟢 SIGNAL LONG)"
     }
   ]
 }
