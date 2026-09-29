@@ -3,17 +3,18 @@
     "signal": "HAUT_NON_CONF",
     "pressure": {
       "date": "2026-09-29",
-      "max": 0,
+      "max": 1,
       "min": 0
     },
-    "reg_strong": "2026-09-28",
+    "reg_strong": "2026-09-29",
     "rates": "2026-09-24",
     "oil": true,
     "reg_weak": "2026-09-25"
   },
   "date": "2026-09-29",
   "reports_sent": [
-    14
+    14,
+    20
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,7 +25,20 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "HAUT_NON_CONF",
       "lvl": 0
+    },
+    {
+      "h": "20:04",
+      "btc": 83264.953125,
+      "score": 2,
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 1
     }
   ],
-  "events": []
+  "events": [
+    {
+      "h": "20:04",
+      "text": "Dollar ACHETÉ confirmé (BTC 83 265 $)"
+    }
+  ]
 }
