@@ -3,7 +3,7 @@
     "signal": "HAUT_NON_CONF",
     "pressure": {
       "date": "2026-10-01",
-      "max": 1,
+      "max": 2,
       "min": 0
     },
     "reg_strong": "2026-09-29",
@@ -13,7 +13,8 @@
   },
   "date": "2026-10-01",
   "reports_sent": [
-    14
+    14,
+    20
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,7 +25,20 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "HAUT_NON_CONF",
       "lvl": 1
+    },
+    {
+      "h": "20:31",
+      "btc": 84793.9921875,
+      "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 2
     }
   ],
-  "events": []
+  "events": [
+    {
+      "h": "20:31",
+      "text": "Forts achats de dollars (DXY +0.71%)"
+    }
+  ]
 }
