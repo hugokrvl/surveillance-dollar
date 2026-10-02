@@ -4,7 +4,7 @@
     "pressure": {
       "date": "2026-10-02",
       "max": 0,
-      "min": 0
+      "min": -1
     },
     "reg_strong": "2026-09-29",
     "rates": "2026-09-24",
@@ -13,7 +13,8 @@
   },
   "date": "2026-10-02",
   "reports_sent": [
-    12
+    12,
+    18
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,6 +25,14 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "HAUT_NON_CONF",
       "lvl": 0
+    },
+    {
+      "h": "19:24",
+      "btc": 84843.4609375,
+      "score": 1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
+      "lvl": -1
     }
   ],
   "events": []
