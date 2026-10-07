@@ -1,48 +1,43 @@
 {
   "alerts": {
-    "signal": "LONG",
+    "signal": "HAUT_NON_CONF",
     "pressure": {
-      "date": "2026-10-06",
-      "max": 0,
-      "min": -1
+      "date": "2026-10-07",
+      "max": 2,
+      "min": 0
     },
-    "reg_strong": "2026-09-29",
+    "reg_strong": "2026-10-07",
     "rates": "2026-09-24",
     "oil": true,
     "reg_weak": "2026-10-06"
   },
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "reports_sent": [
-    14,
-    20
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:42",
-      "btc": 86260.2890625,
-      "score": -2,
-      "regime": "💵⬇️ DOLLAR VENDU",
-      "signal": "LONG",
-      "lvl": -1
-    },
-    {
-      "h": "20:38",
-      "btc": 85587.828125,
-      "score": -2,
-      "regime": "💵⬇️ DOLLAR VENDU",
-      "signal": "LONG",
-      "lvl": -1
+      "h": "14:36",
+      "btc": 83638.140625,
+      "score": 4,
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 2
     }
   ],
   "events": [
     {
-      "h": "14:42",
-      "text": "🟢 SIGNAL LONG (BTC 86 260 $, avant : 🟡 Au-dessus de 82k SANS confirmation dollar)"
+      "h": "14:36",
+      "text": "🟡 Au-dessus de 82k SANS confirmation dollar (BTC 83 638 $, avant : 🟢 SIGNAL LONG)"
     },
     {
-      "h": "14:42",
-      "text": "Dollar VENDU confirmé (BTC 86 260 $)"
+      "h": "14:36",
+      "text": "Dollar ACHETÉ confirmé (BTC 83 638 $)"
+    },
+    {
+      "h": "14:36",
+      "text": "Forts achats de dollars (DXY +0.63%)"
     }
   ]
 }
