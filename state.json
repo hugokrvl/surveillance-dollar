@@ -1,8 +1,8 @@
 {
   "alerts": {
-    "signal": "NEUTRE",
+    "signal": "HAUT_NON_CONF",
     "pressure": {
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "max": 0,
       "min": 0
     },
@@ -11,20 +11,25 @@
     "oil": true,
     "reg_weak": "2026-10-06"
   },
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "reports_sent": [
     14
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:46",
-      "btc": 82242.53125,
-      "score": 2,
-      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
+      "h": "14:32",
+      "btc": 82999.9921875,
+      "score": -2,
+      "regime": "💵↘️ dollar plutôt faible (non confirmé)",
       "signal": "HAUT_NON_CONF",
       "lvl": 0
     }
   ],
-  "events": []
+  "events": [
+    {
+      "h": "14:32",
+      "text": "🟡 Au-dessus de 82k SANS confirmation dollar (BTC 83 000 $, avant : ⚪ NEUTRE — range, on attend)"
+    }
+  ]
 }
