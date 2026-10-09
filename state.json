@@ -13,13 +13,22 @@
   },
   "date": "2026-10-09",
   "reports_sent": [
-    14
+    14,
+    20
   ],
   "recap_sent": false,
   "snapshots": [
     {
       "h": "14:32",
       "btc": 82999.9921875,
+      "score": -2,
+      "regime": "💵↘️ dollar plutôt faible (non confirmé)",
+      "signal": "HAUT_NON_CONF",
+      "lvl": 0
+    },
+    {
+      "h": "20:31",
+      "btc": 82423.6484375,
       "score": -2,
       "regime": "💵↘️ dollar plutôt faible (non confirmé)",
       "signal": "HAUT_NON_CONF",
