@@ -13,7 +13,8 @@
   },
   "date": "2026-10-11",
   "reports_sent": [
-    14
+    14,
+    18
   ],
   "recap_sent": false,
   "snapshots": [
@@ -21,6 +22,14 @@
       "h": "14:03",
       "btc": 83117.2578125,
       "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
+      "lvl": null
+    },
+    {
+      "h": "19:41",
+      "btc": 83992.359375,
+      "score": -1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "HAUT_NON_CONF",
       "lvl": null
