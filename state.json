@@ -2,51 +2,34 @@
   "alerts": {
     "signal": "NEUTRE",
     "pressure": {
-      "date": "2026-10-14",
-      "max": 2,
-      "min": 0
+      "date": "2026-10-15",
+      "max": 0,
+      "min": -2
     },
     "reg_strong": "2026-10-14",
     "rates": "2026-09-24",
     "oil": true,
     "reg_weak": "2026-10-13"
   },
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "reports_sent": [
-    12,
-    16
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "13:07",
-      "btc": 83334.3515625,
-      "score": 0,
+      "h": "12:49",
+      "btc": 80807.390625,
+      "score": -1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "HAUT_NON_CONF",
-      "lvl": 0
-    },
-    {
-      "h": "17:49",
-      "btc": 81693.4921875,
-      "score": 4,
-      "regime": "💵⬆️ DOLLAR ACHETÉ",
       "signal": "NEUTRE",
-      "lvl": 2
+      "lvl": -2
     }
   ],
   "events": [
     {
-      "h": "17:49",
-      "text": "⚪ NEUTRE — range, on attend (BTC 81 693 $, avant : 🟡 Au-dessus de 82k SANS confirmation dollar)"
-    },
-    {
-      "h": "17:49",
-      "text": "Dollar ACHETÉ confirmé (BTC 81 693 $)"
-    },
-    {
-      "h": "17:49",
-      "text": "Forts achats de dollars (DXY +0.70%)"
+      "h": "12:49",
+      "text": "Fortes ventes de dollars (DXY -0.43%)"
     }
   ]
 }
