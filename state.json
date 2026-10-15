@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "signal": "NEUTRE",
+    "signal": "LONG",
     "pressure": {
       "date": "2026-10-15",
       "max": 0,
@@ -9,11 +9,12 @@
     "reg_strong": "2026-10-14",
     "rates": "2026-09-24",
     "oil": true,
-    "reg_weak": "2026-10-13"
+    "reg_weak": "2026-10-15"
   },
   "date": "2026-10-15",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,12 +25,28 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
       "lvl": -2
+    },
+    {
+      "h": "17:29",
+      "btc": 82262.15625,
+      "score": -3,
+      "regime": "💵⬇️ DOLLAR VENDU",
+      "signal": "LONG",
+      "lvl": -1
     }
   ],
   "events": [
     {
       "h": "12:49",
       "text": "Fortes ventes de dollars (DXY -0.43%)"
+    },
+    {
+      "h": "17:29",
+      "text": "🟢 SIGNAL LONG (BTC 82 262 $, avant : ⚪ NEUTRE — range, on attend)"
+    },
+    {
+      "h": "17:29",
+      "text": "Dollar VENDU confirmé (BTC 82 262 $)"
     }
   ]
 }
