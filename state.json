@@ -13,13 +13,22 @@
   },
   "date": "2026-10-16",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
     {
       "h": "12:38",
       "btc": 82029.34375,
+      "score": -3,
+      "regime": "💵⬇️ DOLLAR VENDU",
+      "signal": "LONG",
+      "lvl": -1
+    },
+    {
+      "h": "17:00",
+      "btc": 81838.3671875,
       "score": -3,
       "regime": "💵⬇️ DOLLAR VENDU",
       "signal": "LONG",
