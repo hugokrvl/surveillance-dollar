@@ -15,7 +15,8 @@
   "reports_sent": [
     12,
     14,
-    18
+    18,
+    20
   ],
   "recap_sent": false,
   "snapshots": [
@@ -38,6 +39,14 @@
     {
       "h": "18:39",
       "btc": 81167.703125,
+      "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "NEUTRE",
+      "lvl": null
+    },
+    {
+      "h": "20:50",
+      "btc": 81454.65625,
       "score": 0,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
