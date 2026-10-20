@@ -1,10 +1,10 @@
 {
   "alerts": {
-    "signal": "NEUTRE",
+    "signal": "HAUT_NON_CONF",
     "pressure": {
       "date": "2026-10-20",
       "max": 0,
-      "min": 0
+      "min": -1
     },
     "reg_strong": "2026-10-14",
     "rates": "2026-09-24",
@@ -13,7 +13,8 @@
   },
   "date": "2026-10-20",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,12 +25,24 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
       "lvl": 0
+    },
+    {
+      "h": "17:32",
+      "btc": 82291.140625,
+      "score": -1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "HAUT_NON_CONF",
+      "lvl": -1
     }
   ],
   "events": [
     {
       "h": "12:53",
       "text": "⚪ NEUTRE — range, on attend (BTC 81 401 $, avant : 🟡 Au-dessus de 82k SANS confirmation dollar)"
+    },
+    {
+      "h": "17:32",
+      "text": "🟡 Au-dessus de 82k SANS confirmation dollar (BTC 82 291 $, avant : ⚪ NEUTRE — range, on attend)"
     }
   ]
 }
