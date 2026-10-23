@@ -3,7 +3,7 @@
     "signal": "NEUTRE",
     "pressure": {
       "date": "2026-10-23",
-      "max": 0,
+      "max": 1,
       "min": 0
     },
     "reg_strong": "2026-10-23",
@@ -13,7 +13,8 @@
   },
   "date": "2026-10-23",
   "reports_sent": [
-    12
+    12,
+    16
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,6 +25,14 @@
       "regime": "💵⬆️ DOLLAR ACHETÉ",
       "signal": "NEUTRE",
       "lvl": 0
+    },
+    {
+      "h": "17:40",
+      "btc": 81441.046875,
+      "score": 3,
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
+      "signal": "NEUTRE",
+      "lvl": 1
     }
   ],
   "events": [
