@@ -2,43 +2,34 @@
   "alerts": {
     "signal": "NEUTRE",
     "pressure": {
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "max": 0,
       "min": 0
     },
-    "reg_strong": "2026-10-14",
+    "reg_strong": "2026-10-23",
     "rates": "2026-09-24",
     "oil": true,
     "reg_weak": "2026-10-16"
   },
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "reports_sent": [
-    12,
-    16
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "13:06",
-      "btc": 81867.390625,
+      "h": "12:58",
+      "btc": 81571.4296875,
       "score": 2,
-      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
-      "signal": "HAUT_NON_CONF",
-      "lvl": 0
-    },
-    {
-      "h": "17:52",
-      "btc": 81474.078125,
-      "score": 2,
-      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
       "signal": "NEUTRE",
       "lvl": 0
     }
   ],
   "events": [
     {
-      "h": "17:52",
-      "text": "⚪ NEUTRE — range, on attend (BTC 81 474 $, avant : 🟡 Au-dessus de 82k SANS confirmation dollar)"
+      "h": "12:58",
+      "text": "Dollar ACHETÉ confirmé (BTC 81 571 $)"
     }
   ]
 }
