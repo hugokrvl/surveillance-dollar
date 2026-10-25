@@ -11,34 +11,16 @@
     "oil": true,
     "reg_weak": "2026-10-16"
   },
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "reports_sent": [
-    12,
-    16,
-    18
+    10
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "12:14",
-      "btc": 80500.0,
+      "h": "11:39",
+      "btc": 80224.75,
       "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "NEUTRE",
-      "lvl": null
-    },
-    {
-      "h": "16:01",
-      "btc": 80609.59375,
-      "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "NEUTRE",
-      "lvl": null
-    },
-    {
-      "h": "19:26",
-      "btc": 80140.7109375,
-      "score": 1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
       "lvl": null
