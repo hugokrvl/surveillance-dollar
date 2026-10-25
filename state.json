@@ -13,13 +13,22 @@
   },
   "date": "2026-10-25",
   "reports_sent": [
-    10
+    10,
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
       "h": "11:39",
       "btc": 80224.75,
+      "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "NEUTRE",
+      "lvl": null
+    },
+    {
+      "h": "15:34",
+      "btc": 80241.0390625,
       "score": 0,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
