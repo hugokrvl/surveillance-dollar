@@ -2,8 +2,8 @@
   "alerts": {
     "signal": "NEUTRE",
     "pressure": {
-      "date": "2026-10-23",
-      "max": 1,
+      "date": "2026-10-26",
+      "max": 0,
       "min": 0
     },
     "reg_strong": "2026-10-23",
@@ -11,37 +11,19 @@
     "oil": true,
     "reg_weak": "2026-10-16"
   },
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "reports_sent": [
-    10,
-    14,
-    18
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "11:39",
-      "btc": 80224.75,
+      "h": "13:12",
+      "btc": 80190.25,
       "score": 0,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
-      "lvl": null
-    },
-    {
-      "h": "15:34",
-      "btc": 80241.0390625,
-      "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "NEUTRE",
-      "lvl": null
-    },
-    {
-      "h": "18:52",
-      "btc": 80705.2421875,
-      "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "NEUTRE",
-      "lvl": null
+      "lvl": 0
     }
   ],
   "events": []
