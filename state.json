@@ -13,7 +13,8 @@
   },
   "date": "2026-10-30",
   "reports_sent": [
-    12
+    12,
+    18
   ],
   "recap_sent": false,
   "snapshots": [
@@ -24,6 +25,14 @@
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
       "lvl": -1
+    },
+    {
+      "h": "18:59",
+      "btc": 77035.5390625,
+      "score": 2,
+      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
+      "signal": "NEUTRE",
+      "lvl": 0
     }
   ],
   "events": []
