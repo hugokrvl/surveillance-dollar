@@ -2,34 +2,29 @@
   "alerts": {
     "signal": "NEUTRE",
     "pressure": {
-      "date": "2026-11-02",
+      "date": "2026-11-03",
       "max": 0,
-      "min": -1
+      "min": 0
     },
     "reg_strong": "2026-10-27",
     "rates": "2026-09-24",
     "oil": true,
     "reg_weak": "2026-11-02"
   },
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "reports_sent": [
     14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "15:41",
-      "btc": 77840.4921875,
-      "score": -3,
-      "regime": "💵⬇️ DOLLAR VENDU",
+      "h": "14:34",
+      "btc": 77595.40625,
+      "score": -1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "NEUTRE",
-      "lvl": -1
+      "lvl": 0
     }
   ],
-  "events": [
-    {
-      "h": "15:41",
-      "text": "Dollar VENDU confirmé (BTC 77 840 $)"
-    }
-  ]
+  "events": []
 }
