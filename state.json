@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "signal": "NEUTRE",
+    "signal": "SUPPORT",
     "pressure": {
       "date": "2026-11-05",
       "max": 0,
@@ -15,7 +15,7 @@
   "reports_sent": [
     14
   ],
-  "recap_sent": false,
+  "recap_sent": true,
   "snapshots": [
     {
       "h": "14:56",
