@@ -1,6 +1,6 @@
 {
   "alerts": {
-    "signal": "SHORT",
+    "signal": "BAS_NON_CONF",
     "pressure": {
       "date": "2026-11-06",
       "max": 2,
@@ -11,33 +11,25 @@
     "oil": true,
     "reg_weak": "2026-11-04"
   },
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "reports_sent": [
-    14
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:42",
-      "btc": 75632.1484375,
-      "score": 3,
-      "regime": "💵⬆️ DOLLAR ACHETÉ",
-      "signal": "SHORT",
-      "lvl": 2
+      "h": "13:24",
+      "btc": 75914.0625,
+      "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "BAS_NON_CONF",
+      "lvl": null
     }
   ],
   "events": [
     {
-      "h": "14:42",
-      "text": "🔴 SIGNAL SHORT (BTC 75 632 $, avant : 🟠 Support 76,5k attaqué)"
-    },
-    {
-      "h": "14:42",
-      "text": "Dollar ACHETÉ confirmé (BTC 75 632 $)"
-    },
-    {
-      "h": "14:42",
-      "text": "Forts achats de dollars (DXY +0.62%)"
+      "h": "13:24",
+      "text": "🟡 Sous 76k SANS confirmation dollar (BTC 75 914 $, avant : 🔴 SIGNAL SHORT)"
     }
   ]
 }
