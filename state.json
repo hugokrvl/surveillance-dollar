@@ -11,34 +11,20 @@
     "oil": true,
     "reg_weak": "2026-11-04"
   },
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "reports_sent": [
-    12,
-    18
+    12
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "13:24",
-      "btc": 75914.0625,
-      "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "BAS_NON_CONF",
-      "lvl": null
-    },
-    {
-      "h": "18:49",
-      "btc": 75748.8125,
+      "h": "13:42",
+      "btc": 75820.9375,
       "score": 0,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
       "lvl": null
     }
   ],
-  "events": [
-    {
-      "h": "13:24",
-      "text": "🟡 Sous 76k SANS confirmation dollar (BTC 75 914 $, avant : 🔴 SIGNAL SHORT)"
-    }
-  ]
+  "events": []
 }
