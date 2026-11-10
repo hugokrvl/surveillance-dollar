@@ -2,34 +2,42 @@
   "alerts": {
     "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-09",
-      "max": 0,
-      "min": -2
+      "date": "2026-11-10",
+      "max": 1,
+      "min": 0
     },
     "reg_strong": "2026-11-06",
-    "rates": "2026-09-24",
+    "rates": "2026-11-10",
     "oil": false,
-    "reg_weak": "2026-11-04"
+    "reg_weak": "2026-11-04",
+    "accel": {
+      "dir": 1,
+      "t": "2026-11-10T15:16:35.983367+01:00"
+    }
   },
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "reports_sent": [
-    16
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "16:04",
-      "btc": 74731.8515625,
-      "score": 0,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "h": "15:16",
+      "btc": 73834.828125,
+      "score": 2,
+      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
       "signal": "BAS_NON_CONF",
-      "lvl": -2
+      "lvl": 1
     }
   ],
   "events": [
     {
-      "h": "16:04",
-      "text": "Fortes ventes de dollars (DXY -0.42%)"
+      "h": "15:16",
+      "text": "⚡ Le dollar ACCÉLÈRE À LA HAUSSE (+0.30% en 2 h)"
+    },
+    {
+      "h": "15:16",
+      "text": "Taux 10 ans +9 pb"
     }
   ]
 }
