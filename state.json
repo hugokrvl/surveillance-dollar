@@ -1,12 +1,12 @@
 {
   "alerts": {
-    "signal": "BAS_NON_CONF",
+    "signal": "SHORT",
     "pressure": {
-      "date": "2026-11-11",
-      "max": 2,
+      "date": "2026-11-12",
+      "max": 0,
       "min": 0
     },
-    "reg_strong": "2026-11-06",
+    "reg_strong": "2026-11-12",
     "rates": "2026-11-11",
     "oil": false,
     "reg_weak": "2026-11-04",
@@ -15,29 +15,29 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "reports_sent": [
     14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:30",
-      "btc": 73772.2265625,
-      "score": 1,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "BAS_NON_CONF",
-      "lvl": 2
+      "h": "15:34",
+      "btc": 71852.1015625,
+      "score": 3,
+      "regime": "💵⬆️ DOLLAR ACHETÉ",
+      "signal": "SHORT",
+      "lvl": 0
     }
   ],
   "events": [
     {
-      "h": "14:30",
-      "text": "Forts achats de dollars (DXY +0.40%)"
+      "h": "15:34",
+      "text": "🔴 SIGNAL SHORT (BTC 71 852 $, avant : 🟡 Sous 76k SANS confirmation dollar)"
     },
     {
-      "h": "14:30",
-      "text": "Taux 10 ans +12 pb"
+      "h": "15:34",
+      "text": "Dollar ACHETÉ confirmé (BTC 71 852 $)"
     }
   ]
 }
