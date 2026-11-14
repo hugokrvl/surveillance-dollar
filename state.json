@@ -15,25 +15,20 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "reports_sent": [
-    14
+    12
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:53",
-      "btc": 69555.6328125,
+      "h": "13:55",
+      "btc": 67003.5078125,
       "score": 1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
-      "lvl": 0
+      "lvl": null
     }
   ],
-  "events": [
-    {
-      "h": "14:53",
-      "text": "🟡 Sous 76k SANS confirmation dollar (BTC 69 556 $, avant : 🔴 SIGNAL SHORT)"
-    }
-  ]
+  "events": []
 }
