@@ -15,25 +15,16 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "reports_sent": [
-    12,
-    18
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "13:55",
-      "btc": 67003.5078125,
-      "score": 1,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "BAS_NON_CONF",
-      "lvl": null
-    },
-    {
-      "h": "19:38",
-      "btc": 65930.21875,
-      "score": 1,
+      "h": "14:24",
+      "btc": 65635.1328125,
+      "score": -1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
       "lvl": null
