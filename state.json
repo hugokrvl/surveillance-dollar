@@ -2,7 +2,7 @@
   "alerts": {
     "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-13",
+      "date": "2026-11-16",
       "max": 0,
       "min": 0
     },
@@ -15,28 +15,19 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "reports_sent": [
-    14,
-    20
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:24",
-      "btc": 65635.1328125,
-      "score": -1,
+      "h": "15:42",
+      "btc": 65211.75,
+      "score": 1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
-      "lvl": null
-    },
-    {
-      "h": "20:25",
-      "btc": 64953.19140625,
-      "score": -1,
-      "regime": "💵➡️ dollar neutre / signaux mélangés",
-      "signal": "BAS_NON_CONF",
-      "lvl": null
+      "lvl": 0
     }
   ],
   "events": []
