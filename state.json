@@ -2,7 +2,7 @@
   "alerts": {
     "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "max": 0,
       "min": 0
     },
@@ -15,15 +15,15 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "reports_sent": [
-    14
+    16
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "15:42",
-      "btc": 65211.75,
+      "h": "16:28",
+      "btc": 65056.01953125,
       "score": 1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
