@@ -1,9 +1,9 @@
 {
   "alerts": {
-    "signal": "SHORT",
+    "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-18",
-      "max": 1,
+      "date": "2026-11-19",
+      "max": 0,
       "min": 0
     },
     "reg_strong": "2026-11-18",
@@ -15,29 +15,25 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "reports_sent": [
     16
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "16:02",
-      "btc": 63699.6796875,
-      "score": 4,
-      "regime": "💵⬆️ DOLLAR ACHETÉ",
-      "signal": "SHORT",
-      "lvl": 1
+      "h": "16:12",
+      "btc": 63467.55078125,
+      "score": 0,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
+      "signal": "BAS_NON_CONF",
+      "lvl": 0
     }
   ],
   "events": [
     {
-      "h": "16:02",
-      "text": "🔴 SIGNAL SHORT (BTC 63 700 $, avant : 🟡 Sous 76k SANS confirmation dollar)"
-    },
-    {
-      "h": "16:02",
-      "text": "Dollar ACHETÉ confirmé (BTC 63 700 $)"
+      "h": "16:12",
+      "text": "🟡 Sous 76k SANS confirmation dollar (BTC 63 468 $, avant : 🔴 SIGNAL SHORT)"
     }
   ]
 }
