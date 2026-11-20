@@ -2,9 +2,9 @@
   "alerts": {
     "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "max": 0,
-      "min": 0
+      "min": -1
     },
     "reg_strong": "2026-11-18",
     "rates": "2026-11-11",
@@ -15,25 +15,20 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "reports_sent": [
-    16
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "16:12",
-      "btc": 63467.55078125,
-      "score": 0,
+      "h": "15:51",
+      "btc": 61392.19921875,
+      "score": 1,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
-      "lvl": 0
+      "lvl": -1
     }
   ],
-  "events": [
-    {
-      "h": "16:12",
-      "text": "🟡 Sous 76k SANS confirmation dollar (BTC 63 468 $, avant : 🔴 SIGNAL SHORT)"
-    }
-  ]
+  "events": []
 }
