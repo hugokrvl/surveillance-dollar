@@ -2,9 +2,9 @@
   "alerts": {
     "signal": "BAS_NON_CONF",
     "pressure": {
-      "date": "2026-11-20",
-      "max": 0,
-      "min": -1
+      "date": "2026-11-23",
+      "max": 2,
+      "min": 0
     },
     "reg_strong": "2026-11-18",
     "rates": "2026-11-11",
@@ -15,20 +15,25 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "reports_sent": [
-    14
+    18
   ],
-  "recap_sent": true,
+  "recap_sent": false,
   "snapshots": [
     {
-      "h": "14:59",
-      "btc": 60643.421875,
-      "score": -1,
+      "h": "18:18",
+      "btc": 61918.75,
+      "score": 0,
       "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
-      "lvl": null
+      "lvl": 2
     }
   ],
-  "events": []
+  "events": [
+    {
+      "h": "18:18",
+      "text": "Forts achats de dollars (DXY +0.63%)"
+    }
+  ]
 }
