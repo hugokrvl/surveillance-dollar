@@ -15,19 +15,19 @@
       "t": "2026-11-10T15:16:35.983367+01:00"
     }
   },
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "reports_sent": [
-    16
+    14
   ],
   "recap_sent": false,
   "snapshots": [
     {
-      "h": "17:05",
-      "btc": 59912.109375,
-      "score": 2,
-      "regime": "💵↗️ dollar plutôt fort (non confirmé)",
+      "h": "15:59",
+      "btc": 59257.1484375,
+      "score": 1,
+      "regime": "💵➡️ dollar neutre / signaux mélangés",
       "signal": "BAS_NON_CONF",
-      "lvl": 1
+      "lvl": null
     }
   ],
   "events": []
